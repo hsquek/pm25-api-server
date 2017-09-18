@@ -14,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "pm25-api-server",
-    "host": "127.0.0.1",
+    "url": "postgres://xzgdoegztkzfef:5c3da97f0b95cc3fb92b172b0697b3dba9e1afd13f3cd4674de406f89f8e08b3@ec2-23-23-248-247.compute-1.amazonaws.com:5432/d34e21fp9e1jqn",
     "dialect": "postgres"
   }
 }
