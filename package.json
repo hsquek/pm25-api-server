@@ -11,6 +11,9 @@
     "express": "~4.13.1",
     "node-cron": "^1.2.1",
     "nodemon": "^1.12.1",
-    "sequelize": "^4.8.4"
+    "pg": "^7.3.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.8.4",
+    "xml2js": "^0.4.19"
   }
 }
