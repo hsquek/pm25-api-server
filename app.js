@@ -6,9 +6,18 @@ var cron = require('node-cron')
 
 var users = require('./routes/users')
 
+var http = require('http')
+
+setInterval(function () {
+  http.get('http://pm25-api-server.herokuapp.com')
+  console.log('--------------------------')
+  console.log('pinging server')
+  console.log('--------------------------')
+}, 300000) // every 5 minutes (300000)
+
 cron.schedule('15 */10 * * * *', function () {
   console.log('===========================')
-  console.log('running a task 10 minutes')
+  console.log('running a task every 10 minutes')
   console.log('===========================')
 })
 
