@@ -6,9 +6,9 @@ var cron = require('node-cron')
 
 var users = require('./routes/users')
 
-cron.schedule('* * * * *', function () {
+cron.schedule('* */1 * * *', function () {
   console.log('===========================')
-  console.log('running a task every minute')
+  console.log('running a task every hour')
   console.log('===========================')
 })
 
