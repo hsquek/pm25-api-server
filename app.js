@@ -12,7 +12,7 @@ var Reading = require('./models').Reading
 var http = require('http')
 
 setInterval(function () {
-  // http.get('http://pm25-api-server.herokuapp.com')
+  http.get('http://pm25-api-server.herokuapp.com')
   console.log('--------------------------')
   console.log('pinging server')
   console.log('--------------------------')
@@ -20,7 +20,7 @@ setInterval(function () {
 
 cron.schedule('15 5 */1 * * *', function () {
   console.log('===========================')
-  console.log('running a task every 1 minute')
+  console.log('running a task every 1 hour')
   console.log('===========================')
   http.get(
     'http://api.nea.gov.sg/api/WebAPI/?dataset=pm2.5_update&keyref=781CF461BB6606AD4852D40C8C54E93CEA620D12C5E7DF2C',
@@ -48,7 +48,7 @@ cron.schedule('15 5 */1 * * *', function () {
           Reading
             .bulkCreate(createArray)
             .then(function () {
-              console.log('bulk create successful!');
+              console.log('bulk create successful!')
               return
             })
         })
