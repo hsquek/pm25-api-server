@@ -1,0 +1,16 @@
+{
+  "name": "pm25-api-server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "express": "~4.13.1",
+    "node-cron": "^1.2.1",
+    "nodemon": "^1.12.1",
+    "sequelize": "^4.8.4"
+  }
+}
