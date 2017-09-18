@@ -6,9 +6,9 @@ var cron = require('node-cron')
 
 var users = require('./routes/users')
 
-cron.schedule('15 */2 * * * *', function () {
+cron.schedule('15 */10 * * * *', function () {
   console.log('===========================')
-  console.log('running a task 5 minutes')
+  console.log('running a task 10 minutes')
   console.log('===========================')
 })
 
