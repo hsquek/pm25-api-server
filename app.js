@@ -65,7 +65,10 @@ app.use(cookieParser())
 // app.use('/api/v1/users', users)
 
 app.use('/', function (req, res) {
-  res.json({ hello: 'world' })
+  return Reading.findAll()
+                .then(function(readings) {
+                  res.json(readings)
+                })
 })
 
 module.exports = app
