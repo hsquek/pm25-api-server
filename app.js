@@ -67,6 +67,7 @@ app.use(cookieParser())
 app.use('/', function (req, res) {
   return Reading.findAll()
                 .then(function(readings) {
+                  res.setHeader('Access-Control-Allow-Origin','*');
                   res.json(readings)
                 })
 })
