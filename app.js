@@ -65,9 +65,15 @@ app.use(cookieParser())
 // app.use('/api/v1/users', users)
 
 app.use('/', function (req, res) {
-  return Reading.findAll()
-                .then(function(readings) {
-                  res.setHeader('Access-Control-Allow-Origin','*');
+  return Reading.findAll({
+                  where: {
+                    createdAt: {
+                      $gt: new Date(new Date() - 7 * 24 * 60 * 60 * 1000)
+                    }
+                  }
+                })
+                .then(function (readings) {
+                  res.setHeader('Access-Control-Allow-Origin', '*')
                   res.json(readings)
                 })
 })
